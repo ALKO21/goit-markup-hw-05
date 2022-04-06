@@ -128,12 +128,14 @@ img {
 .contacts:focus {
   fill: var(--color-accent);
   color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
+
+/* Для всех эффектов ховера и фокуса (цвет, фон, тень) сделаны переходы. Время - 250ms, функция распределения времени - cubic-bezier(0.4, 0, 0.2, 1 */
 
 /* все ховеры  */
 
-/* .header-link:hover,
-.header-link:focus, */
 .footer-phone:hover,
 .footer-phone:focus,
 .footer-adress:hover,
@@ -141,6 +143,8 @@ img {
 .footer-mail:hover,
 .footer-mail:focus {
   color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* navigation hover start*/
@@ -161,9 +165,13 @@ img {
 }
 .nav-link:hover {
   color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 .nav-link:hover:after {
   opacity: 1;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* navigation hover finish*/
@@ -368,7 +376,7 @@ img {
   border-radius: 50%;
 }
 
-.sn-member-icon {
+.member-network-link {
   fill: var(--color-gray);
 }
 
@@ -376,6 +384,9 @@ img {
 .member-network-link:focus {
   background-color: var(--color-accent);
   fill: var(--color-white);
+
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* clients */
@@ -390,6 +401,10 @@ img {
   height: 92px;
 }
 
+.client {
+  width: 102px;
+  height: 60px;
+}
 .client-link {
   width: 100%;
   height: 100%;
@@ -405,10 +420,8 @@ img {
 .client-link:focus {
   fill: var(--color-accent);
   border: var(--color-accent) 1px solid;
-}
-.client {
-  width: 102px;
-  height: 60px;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* footer */
@@ -491,6 +504,8 @@ img {
 .footer-network-link:hover,
 .footer-network-link:focus {
   background-color: var(--color-accent);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* our_projects */
@@ -527,6 +542,8 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
 
 /* project pictures */
@@ -600,12 +617,12 @@ img {
 
 .project-link:hover .project-overlay,
 .project-link:focus .project-overlay {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
   transform: translateY(0%);
 }
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
 }
