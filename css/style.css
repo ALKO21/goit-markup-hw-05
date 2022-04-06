@@ -58,7 +58,7 @@ img {
 /* header */
 
 .header {
-  border-bottom: 1px solid #ececec;
+  outline: 1px solid #ececec;
 }
 
 .header-container {
@@ -132,8 +132,8 @@ img {
 
 /* все ховеры  */
 
-.header-link:hover,
-.header-link:focus,
+/* .header-link:hover,
+.header-link:focus, */
 .footer-phone:hover,
 .footer-phone:focus,
 .footer-adress:hover,
@@ -142,6 +142,31 @@ img {
 .footer-mail:focus {
   color: var(--color-accent);
 }
+
+/* navigation hover start*/
+.nav-list {
+  position: relative;
+}
+.nav-link::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  bottom: -1.5px;
+
+  border-radius: 4px;
+  background-color: var(--color-accent);
+
+  opacity: 0;
+}
+.nav-link:hover {
+  color: var(--color-accent);
+}
+.nav-link:hover:after {
+  opacity: 1;
+}
+
+/* navigation hover finish*/
 
 /* hero */
 
