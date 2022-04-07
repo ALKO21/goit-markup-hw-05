@@ -660,13 +660,35 @@ img {
   width: 30px;
   height: 30px;
 
+  padding-left: 4px;
+
   margin-top: 8px;
   margin-right: 8px;
 
-  /* fill: currentColor; */
-  /* fill: var(--color-black); */
-  /* background: #ffffff; */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-image: url(../img-vect/close-button.svg);
+  background-color: var(--color-white);
+
+  cursor: pointer;
+}
+
+.modal > p {
+  text-align: center;
+  padding: 150px 50px;
+}
+
+.svg-close {
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  fill: currentColor;
+  fill: #000000;
+  /* margin: 6px; */
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
