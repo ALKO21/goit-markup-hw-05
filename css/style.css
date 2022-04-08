@@ -98,6 +98,7 @@ img {
 .header-list-contact {
   margin-left: auto;
 }
+
 .header-link,
 .contacts {
   padding: 32px 0;
@@ -107,7 +108,8 @@ img {
   color: inherit;
   letter-spacing: 0.02em;
   line-height: 1.14;
-  vertical-align: middle;
+
+  transition: color 750ms cubic-bezier(0.4, 0, 0.2, 1), fill 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* иконки в хедере   */
@@ -128,8 +130,6 @@ img {
 .contacts:focus {
   fill: var(--color-accent);
   color: var(--color-accent);
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* Для всех эффектов ховера и фокуса (цвет, фон, тень) сделаны переходы. Время - 250ms, функция распределения времени - cubic-bezier(0.4, 0, 0.2, 1 */
@@ -143,15 +143,14 @@ img {
 .footer-mail:hover,
 .footer-mail:focus {
   color: var(--color-accent);
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* navigation hover start*/
-.nav-list {
+.header-list {
   position: relative;
 }
-.nav-link::after {
+.nav-link-studia::after,
+.nav-link-portfolio::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -161,17 +160,11 @@ img {
   border-radius: 4px;
   background-color: var(--color-accent);
 
-  opacity: 0;
-}
-.nav-link:hover {
-  color: var(--color-accent);
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
-}
-.nav-link:hover:after {
   opacity: 1;
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
+}
+.header-link:hover,
+.header-link:focus {
+  color: var(--color-accent);
 }
 
 /* navigation hover finish*/
@@ -314,16 +307,14 @@ img {
   position: absolute;
   bottom: 0;
   display: flex;
-  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
   height: 70px;
   width: 100%;
   background-color: rgba(47, 48, 58, 0.8);
 }
 
 .action-name {
-  justify-content: center;
-  margin: auto;
-
   font-weight: 700;
   line-height: calc(16 / 14);
   text-transform: uppercase;
@@ -400,6 +391,9 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .member-network-link {
@@ -410,9 +404,6 @@ img {
 .member-network-link:focus {
   background-color: var(--color-accent);
   fill: var(--color-white);
-
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* clients */
@@ -441,13 +432,13 @@ img {
 
   border: #afb1b8 1px solid;
   border-radius: 4px;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
   fill: var(--color-accent);
   border: var(--color-accent) 1px solid;
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* footer */
@@ -477,12 +468,16 @@ img {
   text-decoration: none;
   color: var(--color-white);
   font-style: normal;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-mail,
 .footer-phone {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-style: normal;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list:not(:last-child) {
@@ -525,13 +520,12 @@ img {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   fill: var(--color-white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-network-link:hover,
 .footer-network-link:focus {
   background-color: var(--color-accent);
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* our_projects */
@@ -560,6 +554,9 @@ img {
   font-family: inherit;
   border-radius: 4px;
   border: none;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-button:hover,
 .project-button:focus {
@@ -568,8 +565,6 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* project pictures */
@@ -587,6 +582,8 @@ img {
   display: block;
   text-decoration: none;
   color: var(--color-black);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .picture-def:nth-child(3n) {
@@ -638,7 +635,8 @@ img {
   line-height: 1.5555;
 
   transform: translateY(100%);
-  transition: transform 250ms ease;
+  transition: transform 250ms ease, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover .project-overlay,
@@ -649,8 +647,6 @@ img {
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 250ms;
 }
 
 /* Модальное окно */
@@ -664,7 +660,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 750ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -687,7 +683,7 @@ img {
   border-radius: 4px;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 750ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
@@ -698,13 +694,15 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
 
-  padding-left: 4px;
   margin-top: 8px;
   margin-right: 8px;
+  padding: 0;
 
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -724,4 +722,29 @@ img {
 .modal > p {
   text-align: center;
   padding: 150px 50px;
+}
+
+/* Практикую с анимацией  */
+
+@keyframes animation {
+  0% {
+    background-color: #2196f3;
+  }
+  50% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+. {
+  animation-name: animation;
+  animation-duration: 100ms;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
 }
