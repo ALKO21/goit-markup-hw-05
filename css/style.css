@@ -109,7 +109,7 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.14;
 
-  transition: color 750ms cubic-bezier(0.4, 0, 0.2, 1), fill 750ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* иконки в хедере   */
@@ -382,6 +382,10 @@ img {
 .photo-member-list {
   width: 44px;
   height: 44px;
+}
+
+.photo-member-section .photo-member-list:not(:last-child) {
+  margin-right: 10px;
 }
 
 .member-network-link {
@@ -683,7 +687,7 @@ img {
   border-radius: 4px;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 750ms, cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
@@ -722,29 +726,4 @@ img {
 .modal > p {
   text-align: center;
   padding: 150px 50px;
-}
-
-/* Практикую с анимацией  */
-
-@keyframes animation {
-  0% {
-    background-color: #2196f3;
-  }
-  50% {
-    background-color: green;
-  }
-
-  100% {
-    background-color: red;
-  }
-}
-
-. {
-  animation-name: animation;
-  animation-duration: 100ms;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-delay: 1s;
-  animation-direction: alternate;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
 }
